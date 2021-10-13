@@ -33,7 +33,6 @@ const Home: NextPage = () => {
         activeFillColor: 'rgba(68, 3, 129, 0.75)',
         openMenuEvents: ['cxttapstart'],
         selectCommandEvents: ['tap'],
-        itemColor: 'black',
         itemTextShadowColor: 'transparent',
         outsideMenuCancel: 1,
         commands: [{

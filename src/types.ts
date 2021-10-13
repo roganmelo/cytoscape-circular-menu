@@ -183,8 +183,8 @@ export type Event = EventObject & {
 
 export type MenuInstance = {
   /*
-   * Clean up by manually destroying the menu instance.
-   */
+  * Clean up by manually destroying the menu instance.
+  */
   destroy: () => void
 }
 
