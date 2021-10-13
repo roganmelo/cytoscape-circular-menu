@@ -48,7 +48,7 @@ export type Command = {
   *
   * Default: false
   */
-  disabled: boolean
+  disabled: boolean | ((element: SingularData) => boolean)
 }
 
 export type Options = {

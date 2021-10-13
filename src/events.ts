@@ -143,7 +143,11 @@ class Events {
       })
       DOM.setStyles(content, command.contentStyle || {})
 
-      if (command.disabled) {
+      const disabled = typeof command.disabled === 'function'
+        ? command.disabled(this.target)
+        : command.disabled
+
+      if (disabled) {
         DOM.setStyles(content, { opacity: '0.333' })
         // content.setAttribute('class', 'cytoscape-menu-content cytoscape-menu-disabled')
       }
@@ -326,8 +330,11 @@ class Events {
       const command = this.commands[index]
       const inThisCommand = (theta1 <= theta && theta <= theta2) ||
         (theta1 <= theta + 2 * Math.PI && theta + 2 * Math.PI <= theta2)
+      const disabled = typeof command.disabled === 'function'
+        ? command.disabled(this.target)
+        : command.disabled
 
-      if (inThisCommand && !command.disabled) {
+      if (inThisCommand && !disabled) {
         this.activeCommand = index
 
         break
